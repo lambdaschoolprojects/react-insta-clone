@@ -4,7 +4,7 @@ import React from "react";
 import Post from "./Post";
 
 const PostContainer = ({ postData }) => {
-  return <>{getPosts(postData)}</>;
+  return <div className={"postContainer"}>{getPosts(postData)}</div>;
 };
 
 const getPosts = postData => {
