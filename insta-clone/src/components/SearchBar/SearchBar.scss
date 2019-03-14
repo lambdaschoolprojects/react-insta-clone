@@ -1,0 +1,40 @@
+html {
+  box-sizing: border-box;
+}
+
+.icon {
+  border-right: 1px solid black;
+  padding-right: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+
+  h1 {
+    font-family: 'Pacifico', cursive;
+    margin-left: 10px;
+    align-self: flex-end;
+  }
+
+  input {
+    height: 20px;
+    width: 200px;
+    border-radius: 10%;
+    padding-left: 10px;
+    text-align: center;
+  }
+  .interactions {
+    .interaction {
+      margin: 8px;
+    }
+  }
+
+  .leftSide {
+    display: flex;
+    align-items: center;
+  }
+}
