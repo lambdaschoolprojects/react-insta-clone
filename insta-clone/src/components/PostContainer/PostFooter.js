@@ -1,7 +1,9 @@
-import React from 'react';
+import React from "react";
+
+import CommentSection from "../CommentSection/CommentSection";
 
 const PostFooter = props => {
-    return <div>PostFooter</div>
-}
+  return <CommentSection />;
+};
 
 export default PostFooter;
