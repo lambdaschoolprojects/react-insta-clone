@@ -15,10 +15,10 @@ html {
 }
 
 .post {
-  border: 2px outset #F8F8F8;
+  border: 2px outset #f8f8f8;
   width: fit-content;
   padding: 5px 5px;
-  margin-bottom: 15px;
+  margin: 15px 25px;
 }
 
 .interaction {
@@ -30,7 +30,6 @@ html {
   flex-direction: column;
   h2 {
     font-size: 16px;
-    margin-left: 6px;
+    margin: 15px 6px;
   }
 }
-

@@ -12,7 +12,8 @@ class App extends Component {
 
     this.state = {
       data: {},
-      searchTerm: ""
+      searchTerm: "",
+      newComment: ""
     };
   }
 
@@ -23,10 +24,11 @@ class App extends Component {
   }
 
   onInputChange = event => {
-    let searchTerm = event.target.value;
+    let value = event.target.value;
+    let id = event.target.id;
 
     this.setState(prevState => {
-      return { searchTerm };
+      return { [id]: value };
     });
   };
 
@@ -34,7 +36,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar onInputChange={this.onInputChange} />
-        <PostContainer postData={data} />
+        <PostContainer onInputChange={this.onInputChange} postData={data} />
       </div>
     );
   }

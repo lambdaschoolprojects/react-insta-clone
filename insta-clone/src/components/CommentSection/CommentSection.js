@@ -3,11 +3,11 @@ import React from "react";
 import Comment from "./Comment";
 import AddComment from "./AddComment";
 
-const CommentSection = ({ comments }) => {
+const CommentSection = ({ comments, onInputChange }) => {
   return (
     <>
-      {getComments(comments)}
-      <AddComment />
+      <div className="commentContainer">{getComments(comments)}</div>
+      <AddComment onInputChange={onInputChange} />
     </>
   );
 };

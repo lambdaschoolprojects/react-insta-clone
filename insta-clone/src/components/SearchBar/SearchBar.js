@@ -15,6 +15,7 @@ const SearchBar = ({ onInputChange }) => {
         <h1>Instaclone</h1>
       </div>
       <input
+      id="searchTerm"
         type={"text"}
         placeholder={"\u2315 Search"}
         onChange={event => onInputChange(event)}
