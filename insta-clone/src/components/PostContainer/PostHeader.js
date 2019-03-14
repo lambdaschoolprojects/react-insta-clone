@@ -1,5 +1,8 @@
 import React from "react";
 
+// Styles
+import "./Post.scss";
+
 const PostHeader = ({ username, thumbnail }) => {
   return (
     <div className={"postHeader"}>
