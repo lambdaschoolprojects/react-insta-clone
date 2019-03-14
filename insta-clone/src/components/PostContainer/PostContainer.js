@@ -9,7 +9,7 @@ const PostContainer = ({ postData }) => {
 
 const getPosts = postData => {
   const posts = postData.map(post => (
-    <Post key={post.username + post.timestamp} data={postData} />
+    <Post key={post.username + post.timestamp} data={post} />
   ));
 
   return posts;

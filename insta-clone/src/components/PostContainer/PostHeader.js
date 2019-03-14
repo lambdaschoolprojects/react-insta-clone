@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const PostHeader = props => {
-    return <div>PostHeader</div>
-}
+const PostHeader = ({ username, thumbnail }) => {
+  return (
+    <div className={"postHeader"}>
+      <img src={thumbnail} className={"postImage"} alt={"thumbnail"} />{" "}
+      <h2>{username}</h2>{" "}
+    </div>
+  );
+};
 
 export default PostHeader;

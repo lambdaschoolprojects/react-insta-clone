@@ -6,12 +6,7 @@ import PostImage from "./PostImage";
 import PostFooter from "./PostFooter";
 
 const Post = ({
-  username,
-  thumbnailUrl,
-  imageUrl,
-  comments,
-  likes,
-  timestamp
+  data: { username, thumbnailUrl, imageUrl, comments, likes, timestamp }
 }) => {
   return (
     <>

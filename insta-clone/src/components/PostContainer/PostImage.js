@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const PostImage = props => {
-    return <div>PostImage</div>
-}
+const PostImage = ({ image }) => {
+  return <img src={image} alt={"Image"} />;
+};
 
 export default PostImage;
