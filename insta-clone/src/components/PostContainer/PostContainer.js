@@ -1,19 +1,18 @@
-import React from 'react';
+import React from "react";
 
 // Components
-import PostHeader from "./PostHeader";
-import PostImage from "./PostImage";
-import PostFooter from "./PostFooter";
+import Post from "./Post";
 
-const PostContainer = (props) => {
-    return (
-        <>
-        <PostHeader/>
-        <PostImage />
-        <PostFooter/>
-        </>
+const PostContainer = ({ postData }) => {
+  return <>{getPosts(postData)}</>;
+};
 
-    )
-}
+const getPosts = postData => {
+  const posts = postData.map(post => (
+    <Post key={post.username + post.timestamp} data={postData} />
+  ));
+
+  return posts;
+};
 
 export default PostContainer;
