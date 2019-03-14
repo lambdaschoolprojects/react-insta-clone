@@ -7,14 +7,17 @@ import PostFooter from "./PostFooter";
 
 const Post = ({
   onInputChange,
-  data: { username, thumbnailUrl, imageUrl, comments, likes, timestamp }
+  onSubmitComment,
+  data: { id, username, thumbnailUrl, imageUrl, comments, likes, timestamp }
 }) => {
   return (
     <div className={"post"}>
       <PostHeader username={username} thumbnail={thumbnailUrl} />
       <PostImage image={imageUrl} />
       <PostFooter
+        postId={id}
         onInputChange={onInputChange}
+        onSubmitComment={onSubmitComment}
         comments={comments}
         likes={likes}
         timestamp={timestamp}

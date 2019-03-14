@@ -32,11 +32,27 @@ class App extends Component {
     });
   };
 
+  onSubmitComment = (event, postId) => {
+    //console.log("bleep bloop");
+    this.setState(prevState => {
+      prevState.data.forEach(post => {
+        if (post.id === postId) post.comments.push(this.state.newComment);
+      });
+      const data = prevState.data;
+
+      return { data, newComment: "" };
+    });
+  };
+
   render() {
     return (
       <div>
         <SearchBar onInputChange={this.onInputChange} />
-        <PostContainer onInputChange={this.onInputChange} postData={data} />
+        <PostContainer
+          onSubmitComment={this.onSubmitComment}
+          onInputChange={this.onInputChange}
+          postData={data}
+        />
       </div>
     );
   }

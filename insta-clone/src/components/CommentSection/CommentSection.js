@@ -3,18 +3,27 @@ import React from "react";
 import Comment from "./Comment";
 import AddComment from "./AddComment";
 
-const CommentSection = ({ comments, onInputChange }) => {
+const CommentSection = ({
+  postId,
+  comments,
+  onInputChange,
+  onSubmitComment
+}) => {
   return (
     <>
       <div className="commentContainer">{getComments(comments)}</div>
-      <AddComment onInputChange={onInputChange} />
+      <AddComment
+        postId={postId}
+        onSubmitComment={onSubmitComment}
+        onInputChange={onInputChange}
+      />
     </>
   );
 };
 
 const getComments = comments => {
   const commentTags = comments.map(comment => <Comment comment={comment} />);
-
+  //console.log(comments);
   return commentTags;
 };
 

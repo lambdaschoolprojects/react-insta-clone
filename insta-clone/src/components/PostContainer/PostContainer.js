@@ -3,17 +3,20 @@ import React from "react";
 // Components
 import Post from "./Post";
 
-const PostContainer = ({ postData, onInputChange }) => {
+const PostContainer = ({ postData, onInputChange, onSubmitComment }) => {
   return (
-    <div className={"postContainer"}>{getPosts(postData, onInputChange)}</div>
+    <div className={"postContainer"}>
+      {getPosts(postData, onInputChange, onSubmitComment)}
+    </div>
   );
 };
 
-const getPosts = (postData, onInputChange) => {
+const getPosts = (postData, onInputChange, onSubmitComment) => {
   const posts = postData.map(post => (
     <Post
       onInputChange={onInputChange}
-      key={post.username + post.timestamp}
+      onSubmitComment={onSubmitComment}
+      key={post.id}
       data={post}
     />
   ));
