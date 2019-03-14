@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 import data from './dummy-data';
 
+// Components
 import SearchBar from './components/SearchBar/SearchBar';
+import PostContainer from "./components/PostContainer/PostContainer";
 
 class App extends Component {
     constructor(props) {
@@ -30,7 +32,12 @@ class App extends Component {
     }
 
     render() {
-        return <div><SearchBar onInputChange={this.onInputChange} /></div>;
+        return (
+            <div>
+                <SearchBar onInputChange={this.onInputChange} />
+                <PostContainer/>
+            </div>
+        );
     }
 }
 
