@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      data: {},
+      data: [],
       searchTerm: "",
       newComment: ""
     };
@@ -63,15 +63,31 @@ class App extends Component {
     });
   };
 
+  // Search for posts
+  onSearch = event => {
+    event.preventDefault();
+    this.setState(prevState => {
+      const data = prevState.data.filter(
+        post => post.username === this.state.searchTerm.toLowerCase()
+      );
+
+      return { data, searchTerm: "" };
+    });
+  };
+
   render() {
     return (
       <div>
-        <SearchBar onInputChange={this.onInputChange} />
+        <SearchBar
+          onSearch={this.onSearch}
+          onInputChange={this.onInputChange}
+          searchTerm={this.state.searchTerm}
+        />
         <PostContainer
           onSubmitComment={this.onSubmitComment}
           onInputChange={this.onInputChange}
           onLike={this.onLike}
-          postData={data}
+          postData={this.state.data}
         />
       </div>
     );

@@ -8,19 +8,22 @@ import PropTypes from "prop-types";
 // Styles
 import "./SearchBar.scss";
 
-const SearchBar = ({ onInputChange }) => {
+const SearchBar = ({ onInputChange, onSearch, searchTerm }) => {
   return (
     <div className={"header"}>
       <div className={"leftSide"}>
         <FaInstagram className={"icon"} size={"3em"} />
         <h1>Instaclone</h1>
       </div>
-      <input
-        id="searchTerm"
-        type={"text"}
-        placeholder={"\u2315 Search"}
-        onChange={event => onInputChange(event)}
-      />
+      <form onSubmit={event => onSearch(event)}>
+        <input
+          id="searchTerm"
+          type={"text"}
+          placeholder={"\u2315 Search"}
+          value={searchTerm}
+          onChange={event => onInputChange(event)}
+        />
+      </form>
       <div className={"interactions"}>
         <TiCompass className={"interaction"} size={"2em"} color={"dimgrey"} />
         <FiHeart className={"interaction"} size={"1.8em"} color={"dimgrey"} />
@@ -37,5 +40,7 @@ const SearchBar = ({ onInputChange }) => {
 export default SearchBar;
 
 SearchBar.propTypes = {
-  onInputChange: PropTypes.func
+  onInputChange: PropTypes.func,
+  onSearch: PropTypes.func,
+  searchTerm: PropTypes.string
 };
