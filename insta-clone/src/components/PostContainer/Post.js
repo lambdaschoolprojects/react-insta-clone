@@ -9,6 +9,7 @@ import PostFooter from "./PostFooter";
 const Post = ({
   onInputChange,
   onSubmitComment,
+  onLike,
   data: { id, username, thumbnailUrl, imageUrl, comments, likes, timestamp }
 }) => {
   return (
@@ -22,6 +23,7 @@ const Post = ({
         comments={comments}
         likes={likes}
         timestamp={timestamp}
+        onLike={onLike}
       />
     </div>
   );
@@ -43,5 +45,8 @@ Post.propTypes = {
     ),
     likes: PropTypes.number,
     timestamp: PropTypes.string
-  })
+  }),
+  onLike: PropTypes.func,
+  onSubmitComment: PropTypes.func,
+  onInputChange: PropTypes.func
 };

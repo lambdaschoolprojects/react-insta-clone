@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import Comment from "./Comment";
 import AddComment from "./AddComment";
@@ -26,15 +25,8 @@ const getComments = comments => {
   const commentTags = comments.map(comment => (
     <Comment key={comment.text} comment={comment} />
   ));
-  //console.log(comments);
+
   return commentTags;
 };
 
 export default CommentSection;
-
-CommentSection.propTypes = {
-  postId: PropTypes.number,
-  comments: PropTypes.array,
-  onInputChange: PropTypes.func,
-  onSubmitComment: PropTypes.func
-};

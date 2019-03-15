@@ -10,12 +10,17 @@ const PostFooter = ({
   timestamp,
   onInputChange,
   onSubmitComment,
+  onLike,
   postId
 }) => {
   return (
     <div className={"postFooter"}>
       <div className={"interactions"}>
-        <FiHeart className={"interaction"} size={"1.6em"} />
+        <FiHeart
+          onClick={() => onLike(postId)}
+          className={"interaction"}
+          size={"1.6em"}
+        />
         <FaRegComment className={"interaction"} size={"1.6em"} />
       </div>
       <h2>{likes} likes</h2>

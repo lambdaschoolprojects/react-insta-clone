@@ -17,12 +17,14 @@ class App extends Component {
     };
   }
 
+  // Set default data
   componentDidMount() {
     this.setState({
       data
     });
   }
 
+  // Update state when inputs change
   onInputChange = event => {
     let value = event.target.value;
     let id = event.target.id;
@@ -32,8 +34,8 @@ class App extends Component {
     });
   };
 
+  // Submit a comment, passed up from AddComment.js
   onSubmitComment = (event, postId) => {
-    //console.log("bleep bloop");
     event.preventDefault();
     this.setState(prevState => {
       prevState.data.forEach(post => {
@@ -49,6 +51,18 @@ class App extends Component {
     });
   };
 
+  // Add a like, passed up from PostFooter.js
+  onLike = postId => {
+    this.setState(prevState => {
+      prevState.data.forEach(post => {
+        if (post.id === postId) post.likes++;
+      });
+      const data = prevState.data;
+
+      return { data };
+    });
+  };
+
   render() {
     return (
       <div>
@@ -56,6 +70,7 @@ class App extends Component {
         <PostContainer
           onSubmitComment={this.onSubmitComment}
           onInputChange={this.onInputChange}
+          onLike={this.onLike}
           postData={data}
         />
       </div>
