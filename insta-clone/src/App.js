@@ -34,6 +34,7 @@ class App extends Component {
 
   onSubmitComment = (event, postId) => {
     //console.log("bleep bloop");
+    event.preventDefault();
     this.setState(prevState => {
       prevState.data.forEach(post => {
         if (post.id === postId)

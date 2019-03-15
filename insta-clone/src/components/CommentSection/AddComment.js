@@ -2,18 +2,21 @@ import React from "react";
 
 const AddComment = ({ onInputChange, onSubmitComment, postId }) => {
   return (
-    <input
-      id="newComment"
-      placeholder="Add comment"
-      type={"text"}
-      onChange={event => onInputChange(event)}
-      onKeyDown={event => onKeyDown(event, postId, onSubmitComment)}
-    />
+    <form onSubmit={event => onSubmit(event, postId, onSubmitComment)}>
+      <input
+        id="newComment"
+        placeholder="Add comment"
+        type={"text"}
+        onChange={event => onInputChange(event)}
+      />
+    </form>
   );
 };
 
-const onKeyDown = (event, postId, cb) => {
-  if (event.keyCode === 13) cb(event, postId);
+const onSubmit = (event, postId, cb) => {
+  console.log("bleep");
+  cb(event, postId);
+  event.preventDefault();
 };
 
 export default AddComment;
