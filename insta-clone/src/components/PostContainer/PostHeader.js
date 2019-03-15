@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // Styles
 import "./Post.scss";
@@ -13,3 +14,8 @@ const PostHeader = ({ username, thumbnail }) => {
 };
 
 export default PostHeader;
+
+PostHeader.propTypes = {
+  username: PropTypes.string,
+  thumbnail: PropTypes.string
+};

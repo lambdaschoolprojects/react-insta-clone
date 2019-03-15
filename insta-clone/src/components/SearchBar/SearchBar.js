@@ -3,6 +3,7 @@ import { FaInstagram } from "react-icons/fa";
 import { TiCompass } from "react-icons/ti";
 import { FiHeart } from "react-icons/fi";
 import { MdPersonOutline } from "react-icons/md";
+import PropTypes from "prop-types";
 
 // Styles
 import "./SearchBar.scss";
@@ -34,3 +35,7 @@ const SearchBar = ({ onInputChange }) => {
 };
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  onInputChange: PropTypes.func
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Comment from "./Comment";
 import AddComment from "./AddComment";
@@ -30,3 +31,10 @@ const getComments = comments => {
 };
 
 export default CommentSection;
+
+CommentSection.propTypes = {
+  postId: PropTypes.number,
+  comments: PropTypes.array,
+  onInputChange: PropTypes.func,
+  onSubmitComment: PropTypes.func
+};
