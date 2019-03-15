@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import data from "./dummy-data";
+import dummyData from "./dummy-data";
 
 // Components
 import SearchBar from "./components/SearchBar/SearchBar";
@@ -20,7 +20,7 @@ class App extends Component {
   // Set default data
   componentDidMount() {
     this.setState({
-      data
+      data: dummyData
     });
   }
 
@@ -67,7 +67,7 @@ class App extends Component {
   onSearch = event => {
     event.preventDefault();
     this.setState(prevState => {
-      const data = prevState.data.filter(
+      const data = dummyData.filter(
         post => post.username === this.state.searchTerm.toLowerCase()
       );
 
