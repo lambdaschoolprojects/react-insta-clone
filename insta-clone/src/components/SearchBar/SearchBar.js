@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { FaInstagram } from "react-icons/fa";
 import { TiCompass } from "react-icons/ti";
 import { FiHeart } from "react-icons/fi";
@@ -15,7 +15,7 @@ const SearchBar = ({ onInputChange }) => {
         <h1>Instaclone</h1>
       </div>
       <input
-      id="searchTerm"
+        id="searchTerm"
         type={"text"}
         placeholder={"\u2315 Search"}
         onChange={event => onInputChange(event)}

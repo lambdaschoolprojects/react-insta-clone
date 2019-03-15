@@ -36,7 +36,11 @@ class App extends Component {
     //console.log("bleep bloop");
     this.setState(prevState => {
       prevState.data.forEach(post => {
-        if (post.id === postId) post.comments.push(this.state.newComment);
+        if (post.id === postId)
+          post.comments.push({
+            username: "Anonymous",
+            text: this.state.newComment
+          });
       });
       const data = prevState.data;
 

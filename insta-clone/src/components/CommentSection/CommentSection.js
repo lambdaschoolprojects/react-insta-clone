@@ -22,7 +22,9 @@ const CommentSection = ({
 };
 
 const getComments = comments => {
-  const commentTags = comments.map(comment => <Comment comment={comment} />);
+  const commentTags = comments.map(comment => (
+    <Comment key={comment.text} comment={comment} />
+  ));
   //console.log(comments);
   return commentTags;
 };
