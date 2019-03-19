@@ -4,6 +4,9 @@ import dummyData from "./dummy-data";
 
 // Components
 import PostContainer from "./components/PostContainer/PostContainer";
+import withAuthenticate from "./authentication/withAuthenticate";
+
+const AuthenticatePage = withAuthenticate(PostContainer);
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +15,8 @@ class App extends Component {
     this.state = {
       data: [],
       searchTerm: "",
-      newComment: ""
+      newComment: "",
+      authenticated: false
     };
   }
 
@@ -77,7 +81,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <PostContainer
+        <AuthenticatePage
           onSearch={this.onSearch}
           searchTerm={this.state.searchTerm}
           onSubmitComment={this.onSubmitComment}
