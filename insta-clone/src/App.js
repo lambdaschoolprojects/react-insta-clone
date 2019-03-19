@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import dummyData from "./dummy-data";
 
 // Components
-import SearchBar from "./components/SearchBar/SearchBar";
 import PostContainer from "./components/PostContainer/PostContainer";
 
 class App extends Component {
@@ -78,12 +77,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SearchBar
-          onSearch={this.onSearch}
-          onInputChange={this.onInputChange}
-          searchTerm={this.state.searchTerm}
-        />
         <PostContainer
+          onSearch={this.onSearch}
+          searchTerm={this.state.searchTerm}
           onSubmitComment={this.onSubmitComment}
           onInputChange={this.onInputChange}
           onLike={this.onLike}

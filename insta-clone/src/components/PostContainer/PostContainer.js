@@ -2,15 +2,23 @@ import React from "react";
 
 // Components
 import Post from "./Post";
+import SearchBar from "../SearchBar/SearchBar";
 
 const PostContainer = ({
   postData,
   onInputChange,
   onSubmitComment,
-  onLike
+  onLike,
+  onSearch,
+  searchTerm
 }) => {
   return (
     <div className={"postContainer"}>
+      <SearchBar
+        onSearch={onSearch}
+        onInputChange={onInputChange}
+        searchTerm={searchTerm}
+      />
       {getPosts(postData, onInputChange, onSubmitComment, onLike)}
     </div>
   );

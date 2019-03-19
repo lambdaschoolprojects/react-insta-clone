@@ -34,4 +34,28 @@ const PostFooter = ({
   );
 };
 
+// WIP
+const getTime = timestamp => {
+  // July 17th 2017, 12:42:40 pm
+  const pattern = /(\w+)(?:\s)(\d{2})(?:th\s)(\d{4})(?:,\s)(\d{2}):(\d{2}):(\d{2})(?:\s)(\w+)/gi;
+
+  console.log(timestamp);
+
+  let groups = timestamp.match(pattern).groups;
+
+  console.log(groups);
+
+  //groups.forEach(group => console.log(group));
+
+  // console.log(
+  //   groups.month,
+  //   groups.day,
+  //   groups.year,
+  //   groups.hour,
+  //   groups.minute,
+  //   groups.second,
+  //   groups.tod
+  // );
+};
+
 export default PostFooter;
