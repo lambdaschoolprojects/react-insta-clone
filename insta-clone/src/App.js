@@ -48,7 +48,7 @@ class App extends Component {
       prevState.data.forEach(post => {
         if (post.id === postId)
           post.comments.push({
-            username: "Anonymous",
+            username: localStorage.getItem("username"),
             text: this.state.newComment
           });
       });
