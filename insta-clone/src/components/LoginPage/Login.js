@@ -1,9 +1,11 @@
 import React from "react";
 
+import "./Login.scss";
+
 const Login = ({ onLoginClicked, onInputChange }) => {
   return (
-    <div className="login">
-      <form onSubmit={event => onLoginClicked(event)}>
+    <div className="loginPage">
+      <form className="loginForm" onSubmit={event => onLoginClicked(event)}>
         <input
           className="loginField"
           id="loginField"
