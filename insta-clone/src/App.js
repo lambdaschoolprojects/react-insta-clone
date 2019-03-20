@@ -82,7 +82,7 @@ class App extends Component {
     });
   };
 
-  // onLoginClicked
+  // login
   onLoginClicked = event => {
     localStorage.setItem("username", this.state.loginField);
     this.setState({ loginField: "", authenticated: true });

@@ -6,6 +6,7 @@ const Login = ({ onLoginClicked, onInputChange }) => {
   return (
     <div className="loginPage">
       <form className="loginForm" onSubmit={event => onLoginClicked(event)}>
+        <h1>Instaclone</h1>
         <input
           className="loginField"
           id="loginField"
