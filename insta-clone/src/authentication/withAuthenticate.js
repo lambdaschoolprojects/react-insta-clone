@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 
-const withAuthenticate = WrappedComponent =>
+const withAuthenticate = AuthenticatedComponent => LoginPage =>
   class extends Component {
     render() {
+      console.log(this.props);
       return (
         <>
-          <WrappedComponent {...this.props} />
+          {this.props.authenticated ? (
+            <AuthenticatedComponent {...this.props} />
+          ) : (
+            <LoginPage {...this.props} />
+          )}
         </>
       );
     }

@@ -4,9 +4,10 @@ import dummyData from "./dummy-data";
 
 // Components
 import PostContainer from "./components/PostContainer/PostContainer";
+import Login from "./components/LoginPage/Login";
 import withAuthenticate from "./authentication/withAuthenticate";
 
-const AuthenticatePage = withAuthenticate(PostContainer);
+const AuthenticatePage = withAuthenticate(PostContainer)(Login);
 
 class App extends Component {
   constructor(props) {
@@ -16,14 +17,17 @@ class App extends Component {
       data: [],
       searchTerm: "",
       newComment: "",
+      loginField: "",
       authenticated: false
     };
   }
 
   // Set default data
   componentDidMount() {
+    let authenticated = localStorage.getItem("username") != null;
     this.setState({
-      data: dummyData
+      data: dummyData,
+      authenticated
     });
   }
 
@@ -78,12 +82,22 @@ class App extends Component {
     });
   };
 
+  // onLoginClicked
+  onLoginClicked = event => {
+    localStorage.setItem("username", this.state.loginField);
+    this.setState({ loginField: "", authenticated: true });
+    event.preventDefault();
+  };
+
   render() {
     return (
       <div>
         <AuthenticatePage
+          onLoginClicked={this.onLoginClicked}
+          authenticated={this.state.authenticated}
           onSearch={this.onSearch}
           searchTerm={this.state.searchTerm}
+          loginField={this.state.loginField}
           onSubmitComment={this.onSubmitComment}
           onInputChange={this.onInputChange}
           onLike={this.onLike}
