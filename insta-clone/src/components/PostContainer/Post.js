@@ -10,6 +10,7 @@ const Post = ({
   onInputChange,
   onSubmitComment,
   onLike,
+  newComment,
   data: { id, username, thumbnailUrl, imageUrl, comments, likes, timestamp }
 }) => {
   return (
@@ -24,6 +25,7 @@ const Post = ({
         likes={likes}
         timestamp={timestamp}
         onLike={onLike}
+        newComment={newComment}
       />
     </div>
   );

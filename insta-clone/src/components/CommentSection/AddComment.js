@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddComment = ({ onInputChange, onSubmitComment, postId }) => {
+const AddComment = ({ onInputChange, onSubmitComment, postId, newComment }) => {
   return (
     <form onSubmit={event => onSubmitComment(event, postId)}>
       <input
@@ -8,6 +8,7 @@ const AddComment = ({ onInputChange, onSubmitComment, postId }) => {
         placeholder="Add comment"
         type={"text"}
         onChange={event => onInputChange(event)}
+        value={newComment}
       />
     </form>
   );

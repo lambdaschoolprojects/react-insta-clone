@@ -11,6 +11,7 @@ const PostFooter = ({
   onInputChange,
   onSubmitComment,
   onLike,
+  newComment,
   postId
 }) => {
   return (
@@ -29,6 +30,7 @@ const PostFooter = ({
         postId={postId}
         comments={comments}
         onInputChange={onInputChange}
+        newComment={newComment}
       />
     </div>
   );

@@ -102,6 +102,7 @@ class App extends Component {
           onInputChange={this.onInputChange}
           onLike={this.onLike}
           postData={this.state.data}
+          newComment={this.state.newComment}
         />
       </div>
     );

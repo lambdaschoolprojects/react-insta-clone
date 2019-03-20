@@ -7,7 +7,8 @@ const CommentSection = ({
   postId,
   comments,
   onInputChange,
-  onSubmitComment
+  onSubmitComment,
+  newComment
 }) => {
   return (
     <>
@@ -16,6 +17,7 @@ const CommentSection = ({
         postId={postId}
         onSubmitComment={onSubmitComment}
         onInputChange={onInputChange}
+        newComment={newComment}
       />
     </>
   );
