@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 import Comment from "./Comment";
 import AddComment from "./AddComment";
@@ -12,7 +13,7 @@ const CommentSection = ({
 }) => {
   return (
     <>
-      <div className="commentContainer">{getComments(comments)}</div>
+      <CommentsWrapperDiv>{getComments(comments)}</CommentsWrapperDiv>
       <AddComment
         postId={postId}
         onSubmitComment={onSubmitComment}
@@ -30,5 +31,10 @@ const getComments = comments => {
 
   return commentTags;
 };
+
+const CommentsWrapperDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export default CommentSection;

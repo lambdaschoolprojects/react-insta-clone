@@ -1,16 +1,24 @@
 import React from "react";
-
-import "./CommentSection.scss";
+import styled from "styled-components";
 
 const Comment = ({ comment: { text, username } }) => {
   return (
-    <div className={"comment"}>
+    <CommentWrapper>
       <p className={"username"}>
         <strong>{username}</strong>
       </p>
       <p>{text}</p>
-    </div>
+    </CommentWrapper>
   );
 };
+
+const CommentWrapper = styled.div`
+  display: flex;
+  margin: 5px;
+  .username {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+`;
 
 export default Comment;
