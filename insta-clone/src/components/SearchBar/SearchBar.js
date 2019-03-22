@@ -4,13 +4,11 @@ import { TiCompass } from "react-icons/ti";
 import { FiHeart } from "react-icons/fi";
 import { MdPersonOutline } from "react-icons/md";
 import PropTypes from "prop-types";
-
-// Styles
-import "./SearchBar.scss";
+import styled from "styled-components";
 
 const SearchBar = ({ onInputChange, onSearch, searchTerm }) => {
   return (
-    <div className={"header"}>
+    <SearchBarWrapper>
       <div className={"leftSide"}>
         <FaInstagram className={"icon"} size={"3em"} />
         <h1>Instaclone</h1>
@@ -33,9 +31,47 @@ const SearchBar = ({ onInputChange, onSearch, searchTerm }) => {
           color={"dimgrey"}
         />
       </div>
-    </div>
+    </SearchBarWrapper>
   );
 };
+
+// Styles
+const SearchBarWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  margin-left: 25px;
+
+  h1 {
+    font-family: "Pacifico", cursive;
+    margin-left: 10px;
+    font-size: 24px;
+  }
+
+  input {
+    height: 20px;
+    width: 200px;
+    border-radius: 10%;
+    padding-left: 10px;
+    text-align: center;
+  }
+  .interactions {
+    .interaction {
+      margin: 8px;
+    }
+  }
+
+  .leftSide {
+    display: flex;
+    align-items: center;
+    .icon {
+      border-right: 1px solid black;
+      padding-right: 10px;
+    }
+  }
+`;
 
 export default SearchBar;
 
