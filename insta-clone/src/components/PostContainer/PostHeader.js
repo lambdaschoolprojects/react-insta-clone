@@ -1,21 +1,26 @@
 import React from "react";
-import PropTypes from "prop-types";
+import styled from "styled-components";
 
-// Styles
-import "./Post.scss";
-
-const PostHeader = ({ username, thumbnail }) => {
+const PostHeader = ({ thumbnail, username }) => {
   return (
-    <div className={"postHeader"}>
+    <StyledHeaderDiv>
       <img src={thumbnail} className={"postImage"} alt={"thumbnail"} />{" "}
       <h2>{username}</h2>{" "}
-    </div>
+    </StyledHeaderDiv>
   );
 };
 
-export default PostHeader;
+// styles
+const StyledHeaderDiv = styled.div`
+  display: flex;
+  align-content: center;
+  align-items: center;
+  align-items: center;
+  img {
+    height: 30px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+`;
 
-PostHeader.propTypes = {
-  username: PropTypes.string,
-  thumbnail: PropTypes.string
-};
+export default PostHeader;

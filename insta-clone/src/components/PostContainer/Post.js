@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 // Components
 import PostHeader from "./PostHeader";
@@ -13,7 +14,7 @@ const Post = ({
   data: { id, username, thumbnailUrl, imageUrl, comments, likes, timestamp }
 }) => {
   return (
-    <div className={"post"}>
+    <PostWrapperDiv>
       <PostHeader username={username} thumbnail={thumbnailUrl} />
       <PostImage image={imageUrl} />
       <PostFooter
@@ -26,8 +27,15 @@ const Post = ({
         onLike={onLike}
         newComment={newComment}
       />
-    </div>
+    </PostWrapperDiv>
   );
 };
+
+const PostWrapperDiv = styled.div`
+  border: 2px outset #f8f8f8;
+  width: fit-content;
+  padding: 5px 5px;
+  margin: 15px 25px;
+`;
 
 export default Post;
